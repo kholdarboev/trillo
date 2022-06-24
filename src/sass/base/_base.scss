@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+// :root {
+//   --primary: #eb2f64;
+//   --primary-light: #ff3366;
+//   --primary-dark: #ba265d;
+//   --grey-light: #faf9f9;
+//   --grey-dark: #999;
+// }
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Open Sans", "san-serif";
+  font-weight: 400;
+  line-height: 1.6;
+  background-image: linear-gradient(to right bottom, $primary, $primary-light);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $grey-dark-2;
+}
