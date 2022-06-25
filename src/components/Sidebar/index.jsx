@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navbarItems } from "../../utils/navbar.js";
+
 const Navbar = () => {
   return (
     <div className="sidebar">
@@ -10,10 +12,10 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => {
                 return {
-                  background: isActive && "red",
-                  color: isActive ? "white" : "white",
+                  // background: isActive ? "white" : "red",
+                  color: isActive ? "red" : "white",
                   textDecoration: "none",
-                  stroke: isActive ? "red" : "white",
+                  // stroke: isActive ? "red" : "white",
                   fill: isActive ? "red" : "white",
                 };
               }}
@@ -28,7 +30,9 @@ const Navbar = () => {
           );
         })}
       </div>
-      <Outlet />
+      <div className="outlet">
+        <Outlet />
+      </div>
     </div>
   );
 };

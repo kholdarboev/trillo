@@ -1,0 +1,148 @@
+.hotel-view {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: $grey-light-3;
+}
+.gallery {
+  display: flex;
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  &__img-1 {
+    background-color: red;
+  }
+}
+
+.flex {
+  @include Center;
+  justify-content: start;
+}
+
+.ant-rate-star-half .ant-rate-star-first,
+.ant-rate-star-full .ant-rate-star-second {
+  & path {
+    fill: red;
+  }
+  color: red;
+}
+.hotel__heading {
+  display: flex;
+  justify-content: space-between;
+  &-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: $grey-dark-2;
+    margin: 0 5rem;
+  }
+  background-color: white;
+}
+.location {
+  font-weight: 700;
+  color: crimson;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+.votes {
+  text-align: center;
+  background-color: rgb(208, 9, 9);
+  color: white;
+  padding: 1rem 3rem;
+  font-weight: 400;
+  & > :first-child {
+    font-size: 3rem;
+  }
+  margin-left: 4rem;
+}
+.content__wrap {
+  //   margin-top: 3rem;
+  padding: 4rem 3rem;
+  display: flex;
+  gap: 3rem;
+  &-1 {
+    flex: 2;
+    background-color: white;
+    padding: 2rem 5rem;
+  }
+  &-2 {
+    flex: 1;
+    margin-left: 2rem;
+    & > a {
+      text-align: center;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 1.5rem;
+      color: black;
+      display: flex;
+      justify-content: center;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+.quote {
+  background-color: white;
+  padding: 2rem 5rem;
+}
+.quote:last-child {
+  margin-top: 2rem;
+}
+
+.lists {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  & > li > span {
+    margin-right: 1rem;
+    color: red;
+  }
+}
+.imgwrapper {
+  position: relative;
+  display: flex;
+}
+.ant-image-mask-info,
+.ant-image-mask:hover {
+  display: none;
+}
+
+.user-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 2px solid $grey-light-1;
+  padding: 0.3rem;
+  background-position: center;
+  object-fit: cover;
+  &-1 {
+    cursor: pointer;
+
+    position: absolute;
+    transition: all 0.5s;
+    left: 8rem;
+  }
+  &-2 {
+    cursor: pointer;
+
+    position: absolute;
+    transition: all 0.5s;
+    left: 5rem;
+  }
+  &-3 {
+    cursor: pointer;
+
+    position: absolute;
+    transition: all 0.5s;
+    left: 2rem;
+  }
+  &-4 {
+    cursor: pointer;
+
+    position: absolute;
+    transition: all 0.5s;
+  }
+}

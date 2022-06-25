@@ -1,0 +1,95 @@
+.header {
+  @include Center;
+  width: 100%;
+  padding: 1rem 2rem;
+  // justify-content: space-between;
+  align-self: stretch;
+  //   &__logo {
+  //     width: 100%;
+  //     margin-left: 10rem;
+  //   }
+  &__logo {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+  &__details {
+    height: 100%;
+
+    @include Center;
+    // gap: 3rem;
+    & > * {
+      padding: 0 2rem;
+    }
+  }
+  &__search {
+    @include Center;
+    margin-left: 12rem;
+    flex: 1;
+    position: relative;
+  }
+  &__input {
+    background-color: $grey-light-2;
+    border-radius: 30px;
+    width: 60%;
+    padding: 2rem;
+    border: none;
+    outline: none;
+    transition: all 0.5s;
+    margin-right: -5rem;
+    &:focus {
+      width: 70%;
+      background-color: $grey-light-3;
+    }
+    &::placeholder {
+      font-weight: 100;
+      font-size: 1.4rem;
+    }
+  }
+  &__details {
+    align-self: center;
+    &-item {
+      display: flex;
+      justify-content: center;
+      // align-items: stretch;
+      height: 100%;
+    }
+  }
+}
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: $grey-dark-3;
+  fill: $grey-dark-2;
+  cursor: pointer;
+  :hover {
+    stroke: red;
+    fill: red;
+  }
+}
+.user {
+  @include Center;
+  gap: 1rem;
+  &__img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: all 0.4s;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.notification {
+  position: absolute;
+  background-color: red;
+  padding: 3px 4px;
+  color: white;
+  border-radius: 50%;
+  font-size: 5px;
+  left: 1.7rem;
+  top: -0.6rem;
+}

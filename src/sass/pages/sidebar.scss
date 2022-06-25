@@ -1,18 +1,14 @@
 .sidebar {
   display: flex;
   &__items {
-    width: 15%;
-    height: 100vh;
-    // flex-direction: column;
+    width: 20%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     background-color: $grey-dark-1;
     padding: 5rem 0;
     text-decoration: none;
     font-weight: 400;
-    :hover {
-      color: #00fff5;
-    }
   }
 }
 
@@ -20,10 +16,15 @@
 
 .item {
   text-transform: uppercase;
+  position: relative;
   font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  z-index: 20;
   &:hover {
-    background-color: red;
+    fill: white;
+    color: white;
   }
+
   display: flex;
   align-items: center;
   padding: 2rem 3rem;
@@ -33,7 +34,24 @@
   &__icons {
     height: 2rem;
     width: 2rem;
-    fill: white;
   }
   //*title
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $primary;
+    height: 100%;
+    z-index: -10;
+    width: 3px;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+  }
+  &:hover::before {
+    width: 100%;
+    transform: scaleY(1);
+  }
 }
