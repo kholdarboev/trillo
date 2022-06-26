@@ -1,6 +1,7 @@
 import { Image, Rate, Divider } from "antd";
 import React from "react";
 import Hotel1 from "../../assets/imgs/hotel 1.jpg";
+import User from "../../assets/imgs/user.jpg";
 import Hotel2 from "../../assets/imgs/hotel 2.jpg";
 import Hotel3 from "../../assets/imgs/hotel 3.jpg";
 import User1 from "../../assets/imgs/dahiana-waszaj-Xbe20Z_DlDs-unsplash.jpg";
@@ -26,7 +27,7 @@ const Hotel = () => {
       <div className="hotel__heading">
         <div className="flex">
           <div className="hotel__heading-title">hotel las palmas</div>
-          <Rate className="rate" />
+          <Rate defaultValue={5} className="rate" />
         </div>
         <div className="flex">
           <Location />
@@ -47,30 +48,14 @@ const Hotel = () => {
           obcaecati magni sint explicabo.
           <Divider />
           <ul className="lists">
-            <li>
-              <span>&#x3e;</span> Close to the beach
-            </li>
-            <li>
-              <span>&#x3e;</span> Breakfast included
-            </li>
-            <li>
-              <span>&#x3e;</span> Free airport shuttle
-            </li>
-            <li>
-              <span>&#x3e;</span> Free wifi in all rooms
-            </li>
-            <li>
-              <span>&#x3e;</span> Air conditioning and heating
-            </li>
-            <li>
-              <span>&#x3e;</span> Pets allowed
-            </li>
-            <li>
-              <span>&#x3e;</span> We speak all languages
-            </li>
-            <li>
-              <span>&#x3e;</span> Perfect for families
-            </li>
+            <li className="lists__item">Close to the beach</li>
+            <li className="lists__item">Breakfast included</li>
+            <li className="lists__item">Free airport shuttle</li>
+            <li className="lists__item">Free wifi in all rooms</li>
+            <li className="lists__item">Air conditioning and heating</li>
+            <li className="lists__item">Pets allowed</li>
+            <li className="lists__item">We speak all languages</li>
+            <li className="lists__item">Perfect for families</li>
           </ul>
           <Divider />
           <div
@@ -91,17 +76,45 @@ const Hotel = () => {
         </div>
         <div className="content__wrap-2">
           <blockquote className="quote">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente autem voluptates totam
-            sequi, facilis expedita.
+            <div className="quote__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente autem voluptates
+              totam sequi, facilis expedita.
+            </div>
+            <div className="flex" style={{ marginTop: "1rem", justifyContent: "space-between" }}>
+              <div className="flex">
+                <Image className="user-img" width={60} height={60} src={User3} />
+                <div className="quote__user">
+                  <div className="quote__user-name">Scott</div>
+                  <div className="quote__user-date">June 25th 2022</div>
+                </div>
+              </div>
+              <span className="quote__user-rating">9.5</span>
+            </div>
           </blockquote>
           <blockquote className="quote">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente autem voluptates totam
-            sequi, facilis expedita.
+            <div className="quote__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente autem voluptates
+              totam sequi, facilis expedita.
+            </div>
+            <div className="flex" style={{ marginTop: "1rem", justifyContent: "space-between" }}>
+              <div className="flex">
+                <Image className="user-img" width={60} height={60} src={User} />
+                <div className="quote__user">
+                  <div className="quote__user-name">Maryam</div>
+                  <div className="quote__user-date">June 21th 2022</div>
+                </div>
+              </div>
+              <span className="quote__user-rating">9.3</span>
+            </div>
           </blockquote>
           <a href="#" className="show">
-            show all &#x2192;
+            show all <span> &rarr;</span>
           </a>
         </div>
+      </div>
+      <div className="btn">
+        <div className="btn__title">good news! we have 4 free rooms for your selected dates!</div>
+        <button className="btn__button">only 4 rooms left!</button>
       </div>
     </div>
   );

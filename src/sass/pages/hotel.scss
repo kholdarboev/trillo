@@ -1,5 +1,6 @@
 .hotel-view {
   width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
   background-color: $grey-light-3;
@@ -59,7 +60,7 @@
 }
 .content__wrap {
   //   margin-top: 3rem;
-  padding: 4rem 3rem;
+  padding: 4rem 3rem 2rem;
   display: flex;
   gap: 3rem;
   &-1 {
@@ -75,18 +76,52 @@
       cursor: pointer;
       text-decoration: underline;
       font-size: 1.5rem;
-      color: black;
+      color: $primary-dark;
       display: flex;
       justify-content: center;
       &:hover {
+        text-decoration: underline;
         color: $primary;
       }
     }
   }
 }
 .quote {
+  position: relative;
+  overflow: hidden;
   background-color: white;
-  padding: 2rem 5rem;
+  z-index: 999;
+  padding: 3rem;
+  &__user {
+    margin-left: 1rem;
+    &-name {
+      font-weight: 500;
+    }
+    &-date {
+      font-size: 1rem;
+      color: $grey-dark-2;
+    }
+  }
+  &__user-rating {
+    color: red;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  &__text {
+    position: relative;
+    z-index: 999;
+  }
+}
+.quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -8rem;
+  left: -1rem;
+  z-index: 1;
+  color: $grey-light-3;
+  font-size: 20rem;
+  font-family: sans-serif;
+  // font-size: 10rem;
 }
 .quote:last-child {
   margin-top: 2rem;
@@ -96,11 +131,18 @@
   list-style: none;
   display: grid;
   grid-template-columns: auto auto;
-  & > li > span {
+  // & > li > span {
+  //   margin-right: 1rem;
+  //   color: red;
+  // }
+  &__item::before {
+    content: ">";
+    display: inline-block;
     margin-right: 1rem;
     color: red;
   }
 }
+
 .imgwrapper {
   position: relative;
   display: flex;
@@ -120,7 +162,6 @@
   object-fit: cover;
   &-1 {
     cursor: pointer;
-
     position: absolute;
     transition: all 0.5s;
     left: 8rem;
@@ -144,5 +185,42 @@
 
     position: absolute;
     transition: all 0.5s;
+  }
+}
+.show {
+  transition: margin-left 0.2s;
+}
+.btn {
+  display: flex;
+  padding: 3rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: white;
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $grey-dark-3;
+  }
+  &__button {
+    text-transform: uppercase;
+    padding: 2rem 4rem;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, $primary-dark, $primary-light);
+    &:hover {
+      transition: all 0.8s;
+
+      background-image: linear-gradient(to right, $primary-light, $primary-dark);
+    }
+
+    &:active {
+      transform: scale(1.01);
+    }
   }
 }
